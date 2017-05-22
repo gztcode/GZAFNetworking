@@ -31,6 +31,12 @@
     } failure:^(NSError *error) {
         
     }];
+    
+//    NSData *date =[NSData dataWith];
+    
+   
+    
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -10,10 +10,9 @@
 
 
 
-typedef  void (^blockProgress)(float progress);
+typedef void (^blockProgress)       (float progress);
 typedef void (^SuccessCallBack)     (id responseObject,BOOL succe,NSDictionary *jsonDic);
 typedef void (^FailureCallBack)     (NSError *error);
-
 
 
 @interface GZAFNetworking : NSObject
@@ -33,7 +32,7 @@ typedef void (^FailureCallBack)     (NSError *error);
  @param success    成功
  @param failure    失败
  */
-+(void)GZGETOnlineRequest:(NSString *)strURL CacheTime:(NSInteger)CacheTime isLoadingView:(NSString *)loadString blockPro:(blockProgress)blockPro success:(SuccessCallBack)success failure:(FailureCallBack)failure;
++(void)GZGETOnlineRequest:(NSString *)strURL CacheTime:(NSTimeInterval)CacheTime isLoadingView:(NSString *)loadString blockPro:(blockProgress)blockPro success:(SuccessCallBack)success failure:(FailureCallBack)failure;
 
 /**
  POST网络请求基于AFNetWorking3.0
@@ -46,7 +45,7 @@ typedef void (^FailureCallBack)     (NSError *error);
  @param success    成功
  @param failure    失败
  */
-+(void)GZPOSTOnlineRequest:(NSString *)strURL parameters:(id)parameters CacheTime:(NSInteger)CacheTime isLoadingView:(NSString *)loadString blockPro:(blockProgress)blockPro success:(SuccessCallBack)success failure:(FailureCallBack)failure;
++(void)GZPOSTOnlineRequest:(NSString *)strURL parameters:(id)parameters CacheTime:(NSTimeInterval)CacheTime isLoadingView:(NSString *)loadString blockPro:(blockProgress)blockPro success:(SuccessCallBack)success failure:(FailureCallBack)failure;
 
 /**
  下载功能

@@ -50,7 +50,7 @@
 }
 
 
-+(void)GZGETOnlineRequest:(NSString *)strURL CacheTime:(NSInteger)CacheTime isLoadingView:(NSString *)loadString blockPro:(blockProgress)blockPro success:(SuccessCallBack)success failure:(FailureCallBack)failure{
++(void)GZGETOnlineRequest:(NSString *)strURL CacheTime:(NSTimeInterval)CacheTime isLoadingView:(NSString *)loadString blockPro:(blockProgress)blockPro success:(SuccessCallBack)success failure:(FailureCallBack)failure{
     [GZAFNetworking isAccording:NO];
     if (!IsNilString(loadString)) {
         [LoadingView hideProgressHUD];
@@ -119,7 +119,7 @@
         failure(error);
     }];
 }
-+(void)GZPOSTOnlineRequest:(NSString *)strURL parameters:(id)parameters CacheTime:(NSInteger)CacheTime isLoadingView:(NSString *)loadString blockPro:(blockProgress)blockPro success:(SuccessCallBack)success failure:(FailureCallBack)failure{
++(void)GZPOSTOnlineRequest:(NSString *)strURL parameters:(id)parameters CacheTime:(NSTimeInterval)CacheTime isLoadingView:(NSString *)loadString blockPro:(blockProgress)blockPro success:(SuccessCallBack)success failure:(FailureCallBack)failure{
     [GZAFNetworking isAccording:NO];
     if (!IsNilString(loadString)) {
         [LoadingView hideProgressHUD];

@@ -66,15 +66,15 @@ static inline NSString* cachePathForKey(NSString* directory, NSString* key) {
 
 - (instancetype)initWithCacheDirectory:(NSString*)cacheDirectory {
     if((self = [super init])) {
-        _cacheInfoQueue = dispatch_queue_create("com.enormego.gzcache.info", DISPATCH_QUEUE_SERIAL);
+        _cacheInfoQueue = dispatch_queue_create("com.gzcache.info", DISPATCH_QUEUE_SERIAL);
         dispatch_queue_t priority = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
         dispatch_set_target_queue(priority, _cacheInfoQueue);
         
-        _frozenCacheInfoQueue = dispatch_queue_create("com.enormego.gzcache.info.frozen", DISPATCH_QUEUE_SERIAL);
+        _frozenCacheInfoQueue = dispatch_queue_create("com.gzcache.info.frozen", DISPATCH_QUEUE_SERIAL);
         priority = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
         dispatch_set_target_queue(priority, _frozenCacheInfoQueue);
         
-        _diskQueue = dispatch_queue_create("com.enormego.gzcache.disk", DISPATCH_QUEUE_CONCURRENT);
+        _diskQueue = dispatch_queue_create("com.gzcache.disk", DISPATCH_QUEUE_CONCURRENT);
         priority = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
         dispatch_set_target_queue(priority, _diskQueue);
         
